@@ -52,10 +52,12 @@ Sinta-se √† vontade para contribuir para o projeto. Qualquer feedback ou sugest√
 4. **Ative o Ambiente Virtual**
 
     -No Windows:
+    
        ```bash
         .venv\Scripts\activate
 
     -No macOS/Linux:
+
        ```bash
         source .venv/bin/activate
 
