@@ -42,25 +42,32 @@ Sinta-se à vontade para contribuir para o projeto. Qualquer feedback ou sugest�
    git clone https://github.com/iagooteles/webCard.git
 
 2. **Navegue até o Diretório do Projeto**
+   ```bash
     cd webCard
 
 3. **Crie um Ambiente Virtual (opcional, mas recomendado)**
+   ```bash
     python -m venv .venv
 
 4. **Ative o Ambiente Virtual**
 
-No Windows:
-    .venv\Scripts\activate
+    -No Windows:
+       ```bash
+        .venv\Scripts\activate
 
-No macOS/Linux:
-    source .venv/bin/activate
+    -No macOS/Linux:
+       ```bash
+        source .venv/bin/activate
 
 5. **Instale as Dependências**
+   ```bash
     pip install -r requirements.txt
 
 6. **Execute o Servidor**
+   ```bash
     python main.py
 
 7. **Acesse o Aplicativo**
-    Abra um navegador e coloque o endereço: http://127.0.0.1:5000
+    Abra um navegador e coloque o endereço: 
+    - http://127.0.0.1:5000
     
