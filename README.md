@@ -24,9 +24,14 @@ WebCard é um aplicativo web que permite aos usuários criar seu próprio cartã
 2. Preencha os campos do formulário com seu nome, título e até 3 redes sociais.
 3. Clique em "Gerar Cartão" para visualizar seu cartão virtual.
 
+## Imagens do projeto
+
+![WebCard 1](static/images/webcard1.png)
+![WebCard 2](static/images/webcard2.png)
+![WebCard 3](static/images/webcard3.png)
+
 ## Contribuição
 Sinta-se à vontade para contribuir para o projeto. Qualquer feedback ou sugestão é bem-vindo!
-
 
 ### Pré-requisitos
 - Python 3.x instalado

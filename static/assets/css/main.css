@@ -339,6 +339,10 @@ button[type="submit"] {
     justify-content: space-around;
 }
 
+#openModalBtn {
+    margin-top: 20px;
+}
+
 @media (max-width: 968px) {
     .modal-content {
         max-width: 542px;
