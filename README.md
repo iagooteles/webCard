@@ -51,15 +51,14 @@ Sinta-se à vontade para contribuir para o projeto. Qualquer feedback ou sugest�
 
 4. **Ative o Ambiente Virtual**
 
-    -No Windows:
-    
-       ```bash
-        .venv\Scripts\activate
+   - No Windows:
 
-    -No macOS/Linux:
+   ```bash
+   .venv\Scripts\activate
 
-       ```bash
-        source .venv/bin/activate
+    - No macOS/Linux:
+   ```bash
+    source .venv/bin/activate
 
 5. **Instale as Dependências**
    ```bash
