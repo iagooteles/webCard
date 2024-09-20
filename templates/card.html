@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebCard</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='assets/css/main.css') }}"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='assets/css/noscript.css') }}"
+    /></noscript>
+  </head>
+  <body class="is-loading">
+    <div id="wrapper">
+      <section id="main">
+        <header>
+          <span class="avatar">
+            <img
+              src="{{ url_for('static', filename='uploads/' + photo) }}"
+              alt="profile photo of {{ name }}"
+            />
+          </span>
+          <h1 class="card-name">{{ name }}</h1>
+          <p class="card-title">{{ title }}</p>
+        </header>
+
+        <div>
+          <ul class="icons">
+            {% if linkedin %}
+            <li>
+              <a href="{{ linkedin }}" target="_blank" class="fa-linkedin">LinkedIn</a>
+            </li>
+            {% endif %} {% if github %}
+            <li>
+              <a href="{{ github }}" target="_blank" class="fa-github">GitHub</a>
+            </li>
+            {% endif %} {% if facebook %}
+            <li>
+              <a href="{{ facebook }}" target="_blank" class="fa-facebook">Facebook</a>
+            </li>
+            {% endif %} {% if instagram %}
+            <li>
+              <a href="{{ instagram }}" target="_blank" class="fa-instagram">Instagram</a>
+            </li>
+            {% endif %} {% if twitter %}
+            <li>
+              <a href="{{ twitter }}" target="_blank" class="fa-twitter">Twitter</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </section>
+
+      <a href="{{ url_for('home') }}" class="button-voltar-home"
+        >Voltar para Home</a
+      >
+
+      <footer id="footer">
+        <p>&copy; Criado por Iago Teles | {{ year }}</p>
+      </footer>
+    </div>
+
+    <script>
+      if ("addEventListener" in window) {
+        window.addEventListener("load", function () {
+          document.body.className = document.body.className.replace(
+            /\bis-loading\b/,
+            ""
+          );
+        });
+        document.body.className += navigator.userAgent.match(/(MSIE|rv:11\.0)/)
+          ? " is-ie"
+          : "";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebCard</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="static/assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="static/assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-loading">
+    <div id="wrapper">
+      <section id="main">
+        <header>
+          <span class="avatar"
+            ><img
+              src="https://github.com/iagooteles.png"
+              alt="iago profile photo"
+          /></span>
+          <h1>Iago Teles</h1>
+          <p>Programador Full stack</p>
+        </header>
+
+        <div>
+          <ul class="icons">
+            <li>
+              <a
+                href="https://www.linkedin.com/in/iagooteles/"
+                target="_blank"
+                class="fa-linkedin"
+                >Linkedin</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/iagooteles/"
+                target="_blank"
+                class="fa-instagram"
+                >Instagram</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/iagooteles/"
+                target="_blank"
+                class="fa-github"
+                >Github</a
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <button id="openModalBtn">Criar Seu Cartão</button>
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2 class="modal-h2">Crie seu próprio cartão</h2>
+
+          <form
+            id="cardForm"
+            action="{{ url_for('create_card') }}"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <div class="form-container">
+              <div class="form-section">
+                <div class="input-content">
+                  <label for="name">Seu Nome:</label>
+                  <input
+                    type="text"
+                    id="name"
+                    class="form-input"
+                    name="name"
+                    placeholder="Seu nome"
+                    maxlength="30"
+                    required
+                  />
+                </div>
+
+                <div class="input-content">
+                  <label for="title">Seu Título:</label>
+                  <input
+                    type="text"
+                    id="title"
+                    class="form-input"
+                    name="title"
+                    placeholder="Ex: Designer Gráfico, Desenvolvedor Front-End"
+                    maxlength="30"
+                    required
+                  />
+                </div>
+
+                <div class="input-content">
+                  <label for="photo" class="custom-file-upload">Escolher Foto</label>
+                  <input
+                    type="file"
+                    id="photo"
+                    name="photo"
+                    accept="image/*"
+                    onchange="updateFileMessage()"
+                    required
+                  />
+                  <div id="fileMessage" class="file-message">Por favor, escolha uma imagem.</div>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <div>
+                  <label for="socials">Escolha até 3 Redes Sociais:</label
+                  ><br />
+                  <input
+                    type="checkbox"
+                    id="linkedin"
+                    name="socials"
+                    value="linkedin"
+                    onclick="toggleInput('linkedin_link')"
+                  />
+                  <label for="linkedin">LinkedIn</label><br />
+
+                  <input
+                    type="checkbox"
+                    id="github"
+                    name="socials"
+                    value="github"
+                    onclick="toggleInput('github_link')"
+                  />
+                  <label for="github">GitHub</label><br />
+
+                  <input
+                    type="checkbox"
+                    id="facebook"
+                    name="socials"
+                    value="facebook"
+                    onclick="toggleInput('facebook_link')"
+                  />
+                  <label for="facebook">Facebook</label><br />
+
+                  <input
+                    type="checkbox"
+                    id="instagram"
+                    name="socials"
+                    value="instagram"
+                    onclick="toggleInput('instagram_link')"
+                  />
+                  <label for="instagram">Instagram</label><br />
+
+                  <input
+                    type="checkbox"
+                    id="twitter"
+                    name="socials"
+                    value="twitter"
+                    onclick="toggleInput('twitter_link')"
+                  />
+                  <label for="twitter">Twitter</label><br />
+
+                  <div class="input-content-socials-container">
+                    <div
+                      id="linkedin_link"
+                      class="input-content-socials"
+                      style="display: none"
+                    >
+                      <label for="linkedin_url">LinkedIn URL:</label>
+                      <input
+                        type="url"
+                        class="form-input"
+                        id="linkedin_url"
+                        name="linkedin_url"
+                        maxlength="50"
+                        placeholder="Link do LinkedIn"
+                      />
+                    </div>
+
+                    <div
+                      id="github_link"
+                      class="input-content-socials"
+                      style="display: none"
+                    >
+                      <label for="github_url">GitHub URL:</label>
+                      <input
+                        type="url"
+                        class="form-input"
+                        id="github_url"
+                        name="github_url"
+                        maxlength="50"
+                        placeholder="Link do GitHub"
+                      />
+                    </div>
+
+                    <div
+                      id="facebook_link"
+                      class="input-content-socials"
+                      style="display: none"
+                    >
+                      <label for="facebook_url">Facebook URL:</label>
+                      <input
+                        type="url"
+                        class="form-input"
+                        id="facebook_url"
+                        name="facebook_url"
+                        maxlength="50"
+                        placeholder="Link do Facebook"
+                      />
+                    </div>
+
+                    <div
+                      id="instagram_link"
+                      class="input-content-socials"
+                      style="display: none"
+                    >
+                      <label for="instagram_url">Instagram URL:</label>
+                      <input
+                        type="url"
+                        class="form-input"
+                        id="instagram_url"
+                        name="instagram_url"
+                        maxlength="50"
+                        placeholder="Link do Instagram"
+                      />
+                    </div>
+
+                    <div
+                      id="twitter_link"
+                      class="input-content-socials"
+                      style="display: none"
+                    >
+                      <label for="twitter_url">Twitter URL:</label>
+                      <input
+                        type="url"
+                        class="form-input"
+                        id="twitter_url"
+                        name="twitter_url"
+                        maxlength="50"
+                        placeholder="Link do Twitter"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit">Gerar Cartão</button>
+          </form>
+        </div>
+      </div>
+
+      <footer id="footer">
+        <p>&copy; Iago Teles | {{ year }}</p>
+      </footer>
+    </div>
+
+    <script>
+      if ("addEventListener" in window) {
+        window.addEventListener("load", function () {
+          document.body.className = document.body.className.replace(
+            /\bis-loading\b/,
+            ""
+          );
+        });
+        document.body.className += navigator.userAgent.match(/(MSIE|rv:11\.0)/)
+          ? " is-ie"
+          : "";
+      }
+    </script>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

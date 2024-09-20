@@ -16,10 +16,6 @@ __pycache__/
 instance/
 *.sqlite3
 
-# Flask static and templates directories
-static/
-templates/
-
 # Byte-compiled / optimized / DLL files
 *.pyc
 *.pyo
