@@ -52,7 +52,7 @@ Sinta-se √† vontade para contribuir para o projeto. Qualquer feedback ou sugest√
 4. **Ative o Ambiente Virtual**
 
     - No Windows: 
-   .venv\Scripts\activate
+   .venv/Scripts/activate
 
    - No macOS/Linux:
    source .venv/bin/activate
